@@ -109,3 +109,55 @@ Archived JAR file
 🎉 Project Completed!
 
 This project demonstrates the fundamentals of Jenkins continuous integration using a simple Java Maven app.
+
+
+
+✅ 1. Install Java (JDK)
+Ubuntu / Linux
+sudo apt update
+sudo apt install openjdk-17-jdk -y
+
+Check version
+java -version
+
+✅ 2. Install Maven
+Ubuntu / Linux
+sudo apt install maven -y
+
+Check version
+mvn -version
+
+✅ 3. Install Jenkins
+Add Jenkins repo + key:
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+
+Install:
+sudo apt update
+sudo apt install jenkins -y
+
+✅ 4. Start Jenkins Service
+sudo systemctl start jenkins
+sudo systemctl enable jenkins
+sudo systemctl status jenkins
+
+✅ 5. Get Jenkins Admin Password
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+
+Use this to unlock Jenkins in the browser:
+
+👉 http://YOUR-SERVER-IP:8080
+
+or
+👉 http://localhost:8080
+
+✅ 6. Install Git
+sudo apt install git -y
+
+Check Git:
+git --version
